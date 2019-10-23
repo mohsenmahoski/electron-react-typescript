@@ -1,9 +1,11 @@
-import { BrowserWindow , app } from 'electron';
-import path from "path";
-import ElectronReload from "electron-reload";
-import isDev from "electron-is-dev";
+const electron = require("electron");
+const path = require("path");
+const  BrowserWindow = electron.BrowserWindow;
+const  app = electron.app;
+const ElectronReload = require("electron-reload");
+const isDev = require("electron-is-dev");
 let mainWindow;
-const Devtron = require("devtron");
+
 
 ElectronReload(__dirname);
 function createWindow() {
@@ -14,7 +16,9 @@ function createWindow() {
             }
         },
     );
-    Devtron.install();
+    if(isDev){
+        require('devtron').install();
+    }
     mainWindow.loadURL(
     isDev
     ? "http://localhost:3000"

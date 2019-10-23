@@ -25,11 +25,12 @@
     "wait-on": "^3.3.0"
   },
   "devDependencies": {
-    "babel-register": "^6.26.0",
     "babel-preset-env": "^1.7.0",
+    "babel-register": "^6.26.0",
     "devtron": "^1.4.0",
     "electron": "^7.0.0",
-    "electron-builder": "^21.2.0"
+    "electron-builder": "^21.2.0",
+    "electron-packager": "^14.0.6"
   },
   "scripts": {
     "react-start": "react-scripts start",
@@ -39,7 +40,7 @@
     "electron-build": "electron-builder",
     "release": "yarn react-build && electron-builder --publish=always",
     "build": "yarn react-build && yarn electron-build",
-    "start": "concurrently \"cross-env BROWSER=none yarn react-start\" \"wait-on http://localhost:3000 && electron -r babel-register .\""
+    "start": "concurrently \"cross-env BROWSER=none yarn react-start\" \"wait-on http://localhost:3000 && electron .\""
   },
   "eslintConfig": {
     "extends": "react-app"
