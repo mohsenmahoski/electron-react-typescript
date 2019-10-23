@@ -1,9 +1,7 @@
-const electron = require("electron");
-const app = electron.app;
-const BrowserWindow = electron.BrowserWindow;
-const path = require("path");
-const ElectronReload = require("electron-reload");
-const isDev = require("electron-is-dev");
+import { BrowserWindow , app } from 'electron';
+import path from "path";
+import ElectronReload from "electron-reload";
+import isDev from "electron-is-dev";
 let mainWindow;
 const Devtron = require("devtron");
 
